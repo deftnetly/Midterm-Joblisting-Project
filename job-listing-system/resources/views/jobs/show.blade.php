@@ -25,7 +25,13 @@
             </div>
             <div class="card">
                 <h2>Posted By</h2>
-                <p class="muted">{{ $job->employer->user->name }} ({{ $job->employer->user->email }})</p>
+                <p class="muted">{{ $job->employer->user->name }}</p>
+                <p class="muted" style="margin: 0;">Employer: {{ $job->employer->name }}</p>
+            </div>
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p class="muted">Email: {{ $job->employer->user->email }}</p>
+                <p class="muted" style="margin: 0.4rem 0 0;">Phone: {{ $job->employer->phone ?: 'Not provided yet' }}</p>
             </div>
         </div>
 

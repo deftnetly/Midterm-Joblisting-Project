@@ -12,6 +12,7 @@ class EmployerFactory extends Factory
         return [
             'user_id' => User::factory(),
             'name' => $this->faker->company(),
+            'phone' => $this->faker->phoneNumber(),
         ];
     }
 }

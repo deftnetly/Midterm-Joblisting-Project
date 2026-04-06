@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Career Compass' }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/brand/career-compass-icon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/brand/career-compass-icon.png') }}">
     <style>
         :root {
             --bg: #f4f7fb;
@@ -42,7 +44,16 @@
             padding: 1rem 0;
             flex-wrap: wrap;
         }
-        .brand { font-size: 1.2rem; font-weight: 700; color: var(--primary-dark); }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-dark);
+        }
+        .brand img {
+            display: block;
+            height: 44px;
+            width: auto;
+        }
         .nav-links, .nav-actions {
             display: flex;
             align-items: center;
@@ -156,16 +167,31 @@
         .auth-wrap { max-width: 560px; margin: 0 auto; }
         .pagination { margin-top: 1.75rem; }
         .footer { padding: 2rem 0 3rem; color: var(--muted); text-align: center; }
+        .footer-logo {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .footer-logo img {
+            display: block;
+            height: 46px;
+            width: auto;
+            opacity: 0.82;
+        }
         @media (max-width: 640px) {
             .hero { padding: 1.5rem; }
             .navbar { align-items: flex-start; flex-direction: column; }
+            .brand img { height: 38px; }
         }
     </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container navbar">
-            <a class="brand" href="{{ route('home') }}">Career Compass</a>
+            <a class="brand" href="{{ route('home') }}" aria-label="Career Compass home">
+                <img src="{{ asset('images/brand/career-compass-wordmark.png') }}" alt="Career Compass">
+            </a>
             <nav class="nav-links">
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                 <a class="nav-link" href="{{ route('careers') }}">Careers</a>
@@ -200,7 +226,12 @@
     </main>
 
     <footer class="footer">
-        <div class="container">Career Compass brings together roles, salary insights, and career exploration in one simple platform.</div>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="{{ asset('images/brand/career-compass-mono.png') }}" alt="Career Compass">
+                <div>Career Compass brings together roles, salary insights, and career exploration in one simple platform.</div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

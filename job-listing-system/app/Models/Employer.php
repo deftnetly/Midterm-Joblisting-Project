@@ -14,6 +14,7 @@ class Employer extends Model
     protected $fillable = [
         'user_id',
         'name',
+        'phone',
     ];
 
     public function user(): BelongsTo

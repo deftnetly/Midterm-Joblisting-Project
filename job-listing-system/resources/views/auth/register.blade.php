@@ -23,6 +23,13 @@
                     @enderror
                 </div>
                 <div>
+                    <label for="phone">Contact Number</label>
+                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" placeholder="+65 8123 4567">
+                    @error('phone')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div>
                     <label for="email">Email Address</label>
                     <input id="email" name="email" type="email" value="{{ old('email') }}" placeholder="john@example.com">
                     @error('email')

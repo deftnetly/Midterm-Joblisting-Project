@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
         $employer = Employer::factory()->create([
             'user_id' => $user->id,
             'name' => 'Demo Tech Co.',
+            'phone' => '+65 8123 4567',
         ]);
 
         Job::factory()->count(4)->create([

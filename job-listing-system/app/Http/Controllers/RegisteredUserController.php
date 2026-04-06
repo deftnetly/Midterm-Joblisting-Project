@@ -30,6 +30,7 @@ class RegisteredUserController extends Controller
             Employer::create([
                 'user_id' => $user->id,
                 'name' => $request->input('employer_name'),
+                'phone' => $request->input('phone'),
             ]);
         });
 
