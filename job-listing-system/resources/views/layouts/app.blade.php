@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Job Listing System' }}</title>
+    <title>{{ $title ?? 'Career Compass' }}</title>
     <style>
         :root {
             --bg: #f4f7fb;
@@ -106,6 +106,22 @@
             color: var(--primary-dark);
             font-weight: 700;
         }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: #fff3e8;
+            color: #9a4d00;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -116,7 +132,7 @@
         }
         .form-grid { display: grid; gap: 1rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 0.9rem 1rem;
             border: 1px solid var(--border);
@@ -124,7 +140,7 @@
             font: inherit;
             background: #fbfdff;
         }
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: 2px solid rgba(15, 108, 189, 0.2);
             border-color: var(--primary);
         }
@@ -149,16 +165,18 @@
 <body>
     <header class="site-header">
         <div class="container navbar">
-            <a class="brand" href="{{ route('home') }}">Job Listing System</a>
+            <a class="brand" href="{{ route('home') }}">Career Compass</a>
             <nav class="nav-links">
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
+                <a class="nav-link" href="{{ route('careers') }}">Careers</a>
                 <a class="nav-link" href="{{ route('jobs.index') }}">Jobs</a>
+                <a class="nav-link" href="{{ route('salaries') }}">Salaries</a>
                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
             </nav>
             <div class="nav-actions">
                 @auth
                     <span class="muted">Hi, {{ auth()->user()->name }}</span>
-                    <a class="button button-secondary" href="{{ route('jobs.create') }}">Post a Job</a>
+                    <a class="button button-secondary" href="{{ route('jobs.create') }}">Share an Opportunity</a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="button button-danger" type="submit">Logout</button>
@@ -182,7 +200,7 @@
     </main>
 
     <footer class="footer">
-        <div class="container">Built with Laravel for a beginner-friendly job board project.</div>
+        <div class="container">Career Compass brings together roles, salary insights, and career exploration in one simple platform.</div>
     </footer>
 </body>
 </html>

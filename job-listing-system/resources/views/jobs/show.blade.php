@@ -7,6 +7,13 @@
                 <span class="salary-badge">{{ $job->salary }}</span>
                 <h1 style="margin: 1rem 0 0.5rem;">{{ $job->title }}</h1>
                 <p class="page-subtitle">Employer: {{ $job->employer->name }}</p>
+                @if ($job->tags->isNotEmpty())
+                    <div class="tag-row">
+                        @foreach ($job->tags as $tag)
+                            <a class="tag-pill" href="{{ route('jobs.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                        @endforeach
+                    </div>
+                @endif
             </div>
             <a class="button button-secondary" href="{{ route('jobs.index') }}">Back to Jobs</a>
         </div>

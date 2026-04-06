@@ -20,6 +20,7 @@ class UpdateJobRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'min:3'],
             'salary' => ['required', 'string'],
+            'tags' => ['nullable', 'string'],
         ];
     }
 }
