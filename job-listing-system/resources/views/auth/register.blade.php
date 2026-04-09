@@ -10,21 +10,21 @@
                 @csrf
                 <div>
                     <label for="name">Your Name</label>
-                    <input id="name" name="name" type="text" value="{{ old('name') }}" placeholder="John Doe">
+                    <input id="name" name="name" type="text" value="{{ old('name') }}" placeholder="Enter name">
                     @error('name')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
                 <div>
                     <label for="employer_name">Employer Name</label>
-                    <input id="employer_name" name="employer_name" type="text" value="{{ old('employer_name') }}" placeholder="Acme Studio">
+                    <input id="employer_name" name="employer_name" type="text" value="{{ old('employer_name') }}" placeholder="Enter Emp Name">
                     @error('employer_name')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
                 <div>
                     <label for="phone">Contact Number</label>
-                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" placeholder="+65 8123 4567">
+                    <input id="phone" name="phone" type="text" value="{{ old('phone') }}" placeholder="+61 2345 6789">
                     @error('phone')
                         <div class="error">{{ $message }}</div>
                     @enderror
